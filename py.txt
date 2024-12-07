@@ -1,0 +1,15 @@
+python -m venv Venv
+
+cd Venv/Scripts
+
+activate
+
+cd..
+
+cd..
+
+
+pip install django
+
+
+django-admin startproject Config .

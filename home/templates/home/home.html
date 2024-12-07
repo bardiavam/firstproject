@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+{% block title %}
+	صفحه اصلی
+{% endblock %}
+{% block body %}
+
+
+	<h1>به وب سایت فروشگاه من خوش آمدید</h1>
+    {% for i in cat %}
+    <img src="{{ i.image.url }}" alt="" width="200px">
+            	    <h5>{{ i.name }}</h5>
+    {% endfor %}
+{% endblock %}

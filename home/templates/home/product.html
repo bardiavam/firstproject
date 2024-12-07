@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+{% block title %}
+	صفحه mahsool
+{% endblock %}
+{% block body %}
+
+
+	<h1>products: </h1>
+    {% for i in cat %}
+            <a href="{% url 'home:products' %}"><img src="{{ i.image.url }}" alt="" width="200px"></a>
+
+            	    <h5>{{ i.name }}</h5>
+        <h5>discount : {{ i.discount }}%</h5>
+            {% if i.discount %}
+            	<h3 style="text-decoration-line: line-through">{{ i.price }}</h3>
+                <h4>{{ i.total }}</h4>
+            {% else %}
+            <h5>{{ i.price }}</h5>
+            {% endif %}
+        <a href="{% url 'home:detail' i.id %}">detail</a>
+    {% endfor %}
+{% endblock %}
